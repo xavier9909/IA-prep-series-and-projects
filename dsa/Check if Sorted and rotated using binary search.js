@@ -1,9 +1,16 @@
 function runProgram(input){
 input=input.trim().split("\n")
-//let n=+input[0]
-//let arr=input[1].trim().split(" ").map(Number)
+let n=+input[0]
+let arr=input[1].trim().split(" ").map(Number)
 
+console.log(find(arr,n));
+function find(arr,n) {
 
+    if(arr[0]>arr[n-1]){
+        return YES
+    }
+    return NO
+}
     
 }
 
