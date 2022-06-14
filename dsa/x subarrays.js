@@ -15,15 +15,22 @@ for(let i= 0 ; i<tc ; i++){
     
 }
 function find(arr,n,k,x) {
+    let c= 0 
     for(let j = 0 ; j<n ; j++){
-        
-    }
+        let arr2 = arr.slice(j,(j+(x)))
+        console.log(arr2);
+        let arr3 = arr2.filter((a)=>a<=k)
+        //console.log(arr3);
+        if(arr3.length==x){
+               c++
+        }
+    } return c
 }
 
 if (process.env.USER === "shubham") {
   runProgram(`1
-  5 3 2
-  1 3 2 5 1`);
+  7 2 1
+6 1 5 3 2 2 1`);
 } else {
   process.stdin.resume();
   process.stdin.setEncoding("ascii");
