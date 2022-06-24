@@ -34,6 +34,25 @@ db.users.deleteOne({gender:"male"}) // only remove one entry
 
 db.users.deleteMany({gender :"male"}) // delete all data like remove
 
+mongoimport --db test --collection users --file db.json --jsonArray // to json data db.json
 
-b
+
+db.users.find({$eq : "dwgfgfsg@g.com"})// give data that email equal to smae you use $ne 
+
+
+db.users.find({age : {$gt : 9}})  //return all data tht has age greater than 9 same you can ue $lt
+
+db.users.find({$and : [{age : {$gt : 9}},{gender : "Male"}]}) // this data on multiple conditon like age and gender we have passed
+
+db.users.find({$or : [{age : {$gt : 9}},{gender : "Male"}]}) // this data on multiple conditon like age and gender if one of them true it will return that object
+same $nor you can use but in this both condition shoud need to be false
+
+
+db.users.find({age : {$in : [5,4,4]}}) // return all the data who one one of these age
+
+db.users.find({age : {$in : [5,4,4]}}).sort({first_name : 1}) // sort the data in ascending order if use put -1 it will sort in decending order 
+
+  
+
+
 
