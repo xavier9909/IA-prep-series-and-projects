@@ -4,6 +4,7 @@ let multiply = (x,y)=>{
 
 
 let print  = multiply.bind(this,2)
+console.log(print);
 print(3)
 
 

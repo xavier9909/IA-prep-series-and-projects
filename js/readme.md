@@ -82,3 +82,161 @@ ability to pass function as value called first class functions
 }
 
 event loop ---> js is synchronus programming language but sometimes we need to do asynchronus function to do some task in that event loop comes into  the picture it takes callbacks and promises in new environment call web api environment when execution stack encount callback or promise it will pop the function send to web api for keep runnig that function in background when timer gets over it will push the function to the call back queue and call back queue keep looking for execution context to get empty after execution context done doing execution and its get empty callback push the function inside to execution stack and exextion stack will run  it and gives the output
+
+
+
+first_class function,first_order function , highrt_order function , uniry,currying function , pure function
+
+first class function :{
+ability to pass function as value called first class functions
+
+}
+first_order function : those who does not take function as arguments and also not return function 
+
+higher_order function  = those function who take function as arguemnt and can also return function 
+
+currying  = Currying means that the closure does not have to receive all of its arguments at once, but separately. I've found this useful metaphor around the internet: Think of currying as adding ingredients (arguments, or other spices) to a function one by one. You can drop some arguments now, and other arguments as you go
+
+pure_functions = those function who give results which are predictable reliable an easy to test like adding two number we know what result it will give but on the other hand if your cll for api it can give ur desired data but also can return eror  as result this behaviour callred side effcts in react 
+
+
+Side effects :  are not predictable because they are actions which are performed with the "outside world."
+
+call back hell = 
+This is a big issue caused by coding with complex nested callbacks. Here, each and every callback takes an argument that is a result of the previous callbacks. In this manner, The code structure looks like a pyramid, making it difficult to read and maintain. u can fix this via using promises
+
+constructor functions :A constructor is a special function that creates and initializes an object instance of a class. In JavaScript, a constructor gets called when an object is created using the new keyword. The purpose of a constructor is to create a new object and set values for any existing object properties.
+
+
+
+bubbling ,capturing(trickling ) ,premitive and not prmitive data types,prototypes,deboucing ,throttling,polyfills,async def in script tag,event delegation,promises,web storage,cookies ,async await,typeof(null,nan,undefined with defination),iife,non-boolean vlaues in js ,es6 what is added,diffrnce between let and object.freeze,diff in slice splice,memoistation,local storage,session storage
+
+
+bubbling => event triggred by element first runs on it then parent then ancestors
+
+capturing ==> event triggered by el will labled as target now fist ancetor handle will then parent thn target
+
+
+primitive and non-p : So the fundamental difference between primitive and non-primitive is that primitive values are immutable and non-primitive values are mutable and Primitives are stored by value while Non-Primitive (objects) are stored by reference.
+
+primitvie : string,number,bigint,boolean,undefined,symbol,null
+ 
+ non-p : object
+ typeof "hello" // "string"
+
+typeof 0 // "number"
+
+typeof 1n // "bigint"
+
+typeof true // "boolean"
+
+typeof undefined // "undefined"
+
+typeof Symbol("id") // "symbol"
+
+typeof {} // "object"
+
+typeof null // "object"
+
+
+Prototypes   = prtotypes are by default property that are associated with every object and functions 
+prototypes are used to add properties and methods to a constructor function And objects inherit properties and methods from a prototype this also known as prototype inheritnace
+
+function Person () {
+    this.name = 'John',
+    this.age = 23
+}
+
+const person = new Person();
+
+// checking the prototype value
+console.log(Person.prototype); // { ... }
+Person.prototype.gender = 'male'; // will add this new vlaue to object
+
+
+Debouncing and throttling = so when is user is triggring an event continuolsy we use debouncing to not call a function untill user not trigger a funcion in certain period like search bar if user is typing then we dont need trigger a function cll until it stop for like 300ms  but in throttling after calling a funcion we disable the functionality of triggering event for like 5 or 10 seconds like send otp feature after sneding one otp user can for some time before triggering new otp request 
+
+
+debounce : {
+       buttion onclick(magic())  click me
+
+let count = 0
+let getdata = ()=>{
+console.log(++count)
+}
+let id ;
+let debounce  = (fn,time)=>{
+
+    return function(){
+        if(id){
+            clearInterval(id)
+        }
+    id =   setTimeout(()=>{
+       fn()
+    },1000)}
+}
+
+magic = debounce(getdata,1000)
+
+}
+
+throttle : {
+let count = 0
+
+let expensive  = ()=>{
+    console.log("expensive "+" "count++)
+}
+let bool = true
+let throttle = (fn,time)=>{
+        return function(){
+            if(bool){
+                bool = flase
+                fn()
+                setTimeout(()=>{
+                    bool = true
+                },time)
+            }
+        }
+}
+
+let betterexpense = throttle(expensive,1000)
+
+}
+
+
+
+pollyfills : 
+
+
+
+
+
+async and defer in script tag====> :
+    so when browser loads html page its also load scripts(index.   js) after downloading it executes it then only process rest of the page simple fix for it is to paste the script bottom of the page but its no perfec way it show the content but also wait script for too load now we have two keywords for it async and defer if add defer in script tag 
+    it will not block the entire page it start downloading  in background and process rest of the page but it aslo follow the order of scripts if you have two scipts and scond wll load first thn it will wait for the first script to load till event handlers also wait for it load now if you async its also same defer it will tell browser not wait start parallel downloading but async scripts are completely independent  they dont wait for each other to load like first come first serves
+
+
+
+    event delegation ==>
+
+
+
+
+    promises == >  promise is proxy for a for a value which is not known until its return some value this lets function behave as synchronus function not return vlaue immediately but it will wait for success or reject message 
+
+    let mypromise = new Promise((res,rej)=>{res("success")rej("rej")})
+
+    mypromise.then((res)=>{console.log(res)})
+    .catch((rej)=>{console.log(rej)})
+
+
+localstorage and session storage = web browser use some website data to store locally there are two type of storage local and session local storage in permanent storage until deleted but session storage persist until tab is not closed
+
+
+cookies -  Cookies are small pieces of text sent to your browser by a website you visit. They help that website remember information about your visit, which can both make it easier to visit the site again and make the site more useful to you.
+
+
+slice and splice  = slice given dta from given array to given indexes it always return new array but splice can add or remove data to given indexes
+
+
+async and await ->

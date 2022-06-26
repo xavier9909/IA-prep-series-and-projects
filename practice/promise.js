@@ -42,3 +42,4 @@ let p5  = new Promise((resolve,rejct)=>{
 Promise.all([p3,p4]).then((m)=>{
 console.log(m);
 })
+

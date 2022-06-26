@@ -6,7 +6,7 @@ let name  = {
 let find = function (home,dob) {
     console.log(this.firstName +" "+home+" "+dob);
 }
-
+// find("hh",66)
 find.call(name,"mumbai",27)
 find.apply(name,["mumbai",27])
 
