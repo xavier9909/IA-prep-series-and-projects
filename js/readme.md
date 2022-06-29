@@ -239,4 +239,51 @@ cookies -  Cookies are small pieces of text sent to your browser by a website yo
 slice and splice  = slice given dta from given array to given indexes it always return new array but splice can add or remove data to given indexes
 
 
-async and await ->
+async and await -async introduces in ec6 version when you add async keyword to any function by-default it will return promise 
+
+async function simple(){
+    return 1
+}
+simple()
+it will return promise as resolved but js does wait async to get resolved it will keep executing othher things
+in this case we ass await we tellfunction to wait for promie to get reolved then do other things
+
+let pp = ()=>{return new Promise(resolve=>{
+    setTimeout(()=>{
+        console.log("exec");
+    },3000)
+})}
+
+
+async function pp3 (){
+    let mm = "gfgfg"
+  let dd = await pp()
+       //  console.log(pp());
+ console.log(mm);
+}
+pp3()
+“async” keyword needs to be updated in front of functions that contain ”await” keyword to notify that the result might be available after a certain delay since we are explicitly making the main thread wait until the promise has been resolved.
+
+
+
+Memoization: Memoization is a technique for speeding up applications by caching the results of expensive function calls and returning them when the same inputs are used again.
+
+Let us try to understand this by breaking the definition into small parts.
+
+Expensive Function Calls: Time and memory are the two most important resources in computer applications. As a result, an expensive function call is one that consumes large amounts of these two resources due to extensive calculation during execution.
+Cache: A cache is just a temporary data store that stores data in order to serve future requests for that data more quickly.
+
+function fibonacci(n) {                   // slow function
+	if (n < 2)
+		return 1;
+	return fibonacci(n - 1) + fibonacci(n - 2);
+} 
+
+
+function memoisedFibonacci(n, cache) {     // fast function
+	cache = cache || [1, 1]
+	if (cache[n])
+		return cache[n]
+	return cache[n] = memoisedFibonacci(n - 1, cache) +
+	memoisedFibonacci(n - 2, cache);
+}
