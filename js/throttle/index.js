@@ -2,8 +2,9 @@ let count = 0
 function expensive () {
     console.log("expensvie" + " "+count++);
 }
+let flag  = true
+    
 let throttle = (func,limit)=>{
-    let flag  = true
     
         return function () {
             if(flag){

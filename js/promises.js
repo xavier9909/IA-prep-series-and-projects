@@ -1,4 +1,4 @@
-let a;
+let a ="";
 let mypromise = new Promise((res,rej)=>{
 if(a){
     res("success")

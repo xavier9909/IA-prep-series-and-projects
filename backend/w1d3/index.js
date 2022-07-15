@@ -10,6 +10,7 @@ const auth2 = (permission)=>{
 return (req,es,next)=>{
     console.log(permission);
 next()
+
 }
 
 }

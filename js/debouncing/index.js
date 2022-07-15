@@ -1,3 +1,4 @@
+// debounce 
 let count = 0
 const getData = ()=>{
 
@@ -16,6 +17,9 @@ if(id){
 }
 }
 let magic = debounce(getData,300)
+
+
+
 
 
 

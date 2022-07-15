@@ -28,17 +28,17 @@ let p5  = new Promise((resolve,rejct)=>{
 })
 
 
-// Promise.allSettled(
-//     [p3,p4]).then((mes)=>{
-//         console.log(mes);
-//     }).catch((e)=>{
-//         console.log(e);
-//     })
-// Promise.race( [p3,p4]).then((mes)=>{
-//     console.log(mes);
-// }).catch((e)=>{
-//     console.log(e);
-// })
+Promise.allSettled(
+    [p3,p4]).then((mes)=>{
+        console.log(mes);
+    }).catch((e)=>{
+        console.log(e);
+    })
+Promise.race( [p3,p4]).then((mes)=>{
+    console.log(mes);
+}).catch((e)=>{
+    console.log(e);
+})
 Promise.all([p3,p4]).then((m)=>{
 console.log(m);
 })
