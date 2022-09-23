@@ -10,8 +10,7 @@ execution contxt have two context
     2. code component ---->>> second name = thread of execution
           {
             where all code executes
-          }
-
+          } 
 
 
 
@@ -226,7 +225,7 @@ async and defer in script tag====> :
 
     let mypromise = new Promise((res,rej)=>{res("success")rej("rej")})
 
-    mypromise.then((res)=>{console.log(res)})
+    mypromise.then((res)=>{consol e.log(res)})
     .catch((rej)=>{console.log(rej)})
 
 

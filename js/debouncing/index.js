@@ -18,6 +18,11 @@ if(id){
 }
 let magic = debounce(getData,300)
 
+function main()
+{
+console.log("hello") 
+}
+
 
 
 

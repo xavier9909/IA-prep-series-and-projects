@@ -1,119 +1,77 @@
-//debounce
-let count = 0
-let getdata = ()=>{
-console.log(++count);
-}
-let id ;
-let debounce = (fn,time)=>{
-         return function () {
-           if(id){
-            clearInterval(id)
-           }
-        id =     setTimeout(() => {
-                fn()
-            }, time);
-         }
-}
+// // closures
+// function sum(a){ 
+//      let b = 7
+//      return function(){
+//         console.log(a+b);
+//      }
+// }
+
+// let b = sum(4)
+// //b()
+
+// //constructor function
 
 
-let magic = debounce(getdata,1000)
-
-
-
-//throttle
-
-let count2 = 0
-const exp_function = ()=>{
-
-  console.log(count2++);
-  
-  }
-let throttle = true
-let throttle_function = (fn,time)=>{
-  return function () {
-        if(throttle){
-          fn()
-          throttle = false
-          setTimeout(() => {
-              throttle = true
-          }, time);
-        }
-  }
-}
-
-let throttleit = throttle_function(exp_function,1000)
-
-
-
-// currying
-
-function sum1(a) {
-    return function (b) {
-        if(b){
-            return sum1(a+b)
-        }
-        else{
-            return a
-        }
-    }
+// function person(a,b) {
+//     this.b = b
+//     this.a = a
+//     this.bb = function () {
+//         return a+b
+//     }
     
-}
-//console.log(sum1(1)(1)(1)(1)());
-let sum2 = a=>b=> b? sum2(a+b):a
-//console.log(sum2(1)(1)(1)(1)());
+// }
+
+// let p1 = new person(3,4)
+// console.log(p1.bb());
+
+// // debounce 
+// let id 
+// let count = 0
+// const getdata =()=>{
+//     console.log(count++);
+// }
+
+// const bebounce  = (fn,time)=>{
+//   return function(){  if(id){clearTimeout(id)}
+
+//        let id  =   setTimeout(()=>{
+//             fn()
+//          },time)
+// }}
+// let main = bebounce(getdata,1000)
 
 
-// promise
-let p1 = new Promise((res,rej)=>{
-        res("efefefef")
-})
-// p1.then((m)=>{
-//     console.log(m);
+// //throttle
+// let bool = true
+// const expensive = ()=>{
+//     console.log(count++);
+// }
+// const throttle = (fn,time)=>{
+//   return function(){  if(bool){
+//         fn()
+//         bool = false
+//     }
+//          setTimeout(()=>{
+//                bool = true
+//          },time)
+// }}
+
+
+// //  promises
+
+// let promise = new Promise((res,rej)=>{
+//     res("ggggg")
 // })
-let p2 = new Promise((res,rej)=>{
-    res("efefefef")
+// promise.then((e)=>{
+//     console.log(e);
+// })
+
+
+const cr = require("crypto")
+const cipher = cr.createCipher("aes192","hey")
+let en = ""
+cipher.on("end",()=>{
+    console.log(en);
 })
-
-//Promise.allSettled([p1,p2]).then((m)=>{console.log(m);})
-//allsettled -- will give all the result for promises becasue they are dependent on each other
-// all === if use all it will be run as dependent function if one function give it will rejct all'
-// race == runs only fastest promise
-
-
-// constructor function 
-
-function user(n) {
-    this.n = n
-    this.add = function () {
-        return n+10;
-    }
-}
-let usr  = new user(19)
-console.log(usr.add());
-
-// call back
-
-let callback = ()=>{
-    console.log("hello");
-}
-
-let invoke = (call)=>{
-       call()
-}
-invoke(callback)
-
-// asyn await
-
-let p3 = new Promise((res,rej)=>{
-         
-})
-
-
-
-
-
-
-
-
-
-
+cipher.write("hey")
+cipher.end()

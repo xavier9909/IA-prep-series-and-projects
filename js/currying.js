@@ -19,3 +19,15 @@ let multiply1 = function(x){
 
 let multiply2 = multiply1(2)
 multiply2(6) 
+
+
+
+
+function sum(a) {
+    return function (b) {
+       if(b) return sum(a+b)
+        else return a
+    }
+    
+}
+console.log(sum(3)(4)());

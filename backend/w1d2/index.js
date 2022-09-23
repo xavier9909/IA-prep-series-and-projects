@@ -1,7 +1,7 @@
 const express = require("express")
 const app = express()
 const user = require("./db.json")
-app.use(express.json())
+
 app.listen(8000,function () {
     console.log("working");
 })
