@@ -1,0 +1,9 @@
+execution context got 2 component
+
+memory and code component also known as variable environment and thread of execution
+in memory conponent all the values are store and in the code component it executes code lines one by one
+
+
+everything in js happens in execution context
+
+

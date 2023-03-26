@@ -10,8 +10,10 @@ let arr=input[l++].trim()
 arr2.push(arr)
     }
 find(arr2,n);
-}
-}
+
+
+
+}}
 function find(arr2,n) {
      let obj = {}
    for(let k =0 ; k<n; k++){
@@ -37,7 +39,7 @@ function find(arr2,n) {
 
     
 }
-if (process.env.USER === "shubham") {
+if (process.env.USER === "sm798") {
   runProgram(`2
   6
   eat

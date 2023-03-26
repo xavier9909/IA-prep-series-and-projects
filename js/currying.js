@@ -1,3 +1,13 @@
+3.
+
+
+
+
+
+
+
+
+
 let multiply = (x,y)=>{
     console.log(x+y);
 }
